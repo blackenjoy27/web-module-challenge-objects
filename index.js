@@ -15,7 +15,9 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
+function createMenuItem(name,price,category){
+
+    return {name:name,price:price,category:category};
     /*Your code here*/
 }
 
@@ -28,6 +30,13 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+let pizza = new createMenuItem("pizza",5,"lunch");
+let bubleTea = new createMenuItem("bubble tea", 6, "drinks");
+let pie = new createMenuItem("pie",10,"snacks");
+
+console.log(pizza);
+console.log(bubleTea);
+console.log(pie);
 
 
 
