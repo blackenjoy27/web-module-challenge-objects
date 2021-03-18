@@ -173,10 +173,18 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
+ function getReviewByRating(arry,ratingOf) {
+   let similarRating = [];
+   for(let i = 0;i<arry.length;i++){
+     if(Math.floor(arry[i].rating)===ratingOf){
+        similarRating.push(arry[i]);
+     }
+   }
+   return similarRating;
     /* code here */
   }
 
+console.log(getReviewByRating(reviews,4));
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
@@ -191,9 +199,24 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(arry) {
+  let longReviews = [];
+  for(let i = 0;i<arry.length;i++){
+      let num = 1;
+      let feedback = arry[i].feedback;
+      while(feedback.includes(" ")){
+        num++;
+        let space = feedback.indexOf(" ");
+        feedback = feedback.slice(space+1);
+      }
+      if(num>15){
+        longReviews.push(arry[i]);
+      }
   }
+  return longReviews;
+    /* code here */
+}
+console.log(getLongReviews(reviews));
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -214,10 +237,20 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
+function carMaker(odometer) {
+    this.odometer = odometer;
+    this.drive= function(odometer){
+      if(odometer>0){
+        this.odometer +=odometer;
+      }
+      return `This care has now drove ${this.odometer} odometer`;
+    }
     /* code here */
     
 }
+let lambogine = new carMaker(3);
+console.log(lambogine.drive(110));
+console.log(lambogine.odometer);
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
