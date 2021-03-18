@@ -30,9 +30,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-let pizza = new createMenuItem("pizza",5,"lunch");
-let bubleTea = new createMenuItem("bubble tea", 6, "drinks");
-let pie = new createMenuItem("pie",10,"snacks");
+let pizza = createMenuItem("pizza",5,"lunch");
+let bubleTea = createMenuItem("bubble tea", 6, "drinks");
+let pie = createMenuItem("pie",10,"snacks");
 
 console.log(pizza);
 console.log(bubleTea);
@@ -57,6 +57,13 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
+  discount:function(to){
+    if(to==="teacher"||to==="student"){
+      return 13.5;
+    }else if(to === "student"){
+      return 16.2;
+    }
+  }
   /*Your code here*/
 }
 
